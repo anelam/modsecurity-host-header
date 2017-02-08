@@ -7,7 +7,7 @@ RUN apt update &&\
   
 RUN a2enmod security2 &&\
   cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf &&\
-  sed -i 's/^SecAuditLogParts .*/SecAuditLogParts B/g' /etc/modsecurity/modsecurity.conf &&\
+  sed -i 's/^SecAuditLogParts .*/SecAuditLogParts BK/g' /etc/modsecurity/modsecurity.conf &&\
   sed -i 's|^SecAuditLog .*|SecAuditLog /proc/self/fd/1|g' /etc/modsecurity/modsecurity.conf &&\
   sed -i 's/^SecAuditEngine .*/SecAuditEngine On/g' /etc/modsecurity/modsecurity.conf &&\
   sed -i 's/^SecRuleEngine .*/SecRuleEngine On/g' /etc/modsecurity/modsecurity.conf
